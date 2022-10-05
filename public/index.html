@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Service Worker</title>
+    <script>
+        if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js').then(function(registration) {
+            console.log('Service worker registration succeeded:', registration);
+        }).catch(function(error) {
+            console.log('Service worker registration failed:', error);
+        });
+        } else {
+        console.log('Service workers are not supported.');
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>ServiceWorker</h1>
+        <h2>First Cache</h2>
+        <img src="https://images5.alphacoders.com/127/1270960.jpg" alt="First Cache">
+        <h2>First Network</h2>
+        <img src="https://images.alphacoders.com/121/1218911.jpg" alt="First Network">
+        <h2>Cache & Network Update</h2>
+        <img src="https://images6.alphacoders.com/107/1074617.png" alt="Cache & Network Update">
+    </div>
+</body>
+</html>
